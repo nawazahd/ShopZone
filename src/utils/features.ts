@@ -3,12 +3,10 @@
  import { Product } from "../models/product.js";
 import { InvalidateCacheProps, OrderItemType } from "../types/types.js";
 import { Order } from "../models/order.js";
-  //export const connectDB = (uri: string) => {
-  export const connectDB = () => {
-
+  export const connectDB = (uri: string) => {
 
    mongoose
-      .connect("mongodb://127.0.0.1:27017", {
+      .connect(uri, {
         dbName: "shopzone",
       })
       .then((c) => console.log(`DB Connected to ${c.connection.host}`))
