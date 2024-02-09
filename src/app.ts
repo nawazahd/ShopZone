@@ -23,7 +23,7 @@ import { ErrorRequestHandler } from 'express';
   const mongoURI = process.env.MONGO_URI || "";
   const stripeKey = process.env.STRIPE_KEY || "";
 
-  connectDB();
+  connectDB(mongoURI);
 
 export const stripe = new Stripe(stripeKey);
 export const myCache = new NodeCache();
